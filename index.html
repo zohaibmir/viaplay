@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="viaplay">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +7,14 @@
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
         <link rel="stylesheet" href="css/app.css" />
         <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/filters.js"></script>
+        <script src="js/directives.js"></script>
     </head>
-    <body>
+    <body ng-controller="VideoDetailCtrl">
         <header>
             <div class="row">
                 <div class="large-2 small-8 columns">
@@ -60,92 +66,75 @@
                 </div>
 
                 <div class="small-12 large-5 columns">
-                    <div class="metadata">
-                        <div class="group">
-                            <h1 itemprop="name">Smother</h1>
-                            <p>
-                                <span class="genre divider">
-                                    <a href="/film/komedi" data-href="https://content.viaplay.se/pcdash-se/film/komedi" itemprop="genre" data-di-id="di-id-bf740d65-7ae9dec0">Komedi</a>
-                                    <span class="slash">/</span><a href="/film/drama" data-href="https://content.viaplay.se/pcdash-se/film/drama" itemprop="genre" data-di-id="di-id-bf740d65-1056843a">Drama</a>
-                                </span>
+                    <div class="movie-detail">
+
+                        <h1>{{content.title}}</h1>
+                        <p>
+
+                            <span class="genre">
+                                <a ng-repeat="genres in links['viaplay:genres']"  href="{{genres.href}}">{{genres.title}} | </a>                                    
+                            </span>
 
 
-                                <span class="year divider">
-                                    <span>2007</span><meta itemprop="copyrightYear" content="2007">
-                                </span>
+                            <span class="year">
+                                <span>{{content.production.year}} | </span>
+                            </span>
 
-                                <span class="duration divider">
-                                    <span>1h 29min</span><meta itemprop="duration" content="PT1H29M">
-                                </span>
+                            <span class="duration divider">
+                                <span>{{content.duration.readable}}</span>
+                            </span>
 
 
 
-                            </p>			
-                        </div>
+                        </p>			
 
-                        <div class="imdb-container" itemtype="http://schema.org/AggregateRating" itemscope="" itemprop="aggregateRating">
-                            <a class="imdb-link" href="http://www.imdb.com/title/tt0867591?ref_ext_viaplay" target="_blank" rel="nofollow" data-di-id="di-id-9f781140-9f19f9bc">
-                                4.7
-                                <meta itemprop="ratingValue" content="4.7">
-                                <meta itemprop="bestRating" content="10">
-                                <meta itemprop="reviewCount" content="2271">
-                                <span>från 2 271 användare</span>
+
+                        <div class="imdb-container">
+                            <a class="imdb-link" href="{{content.imdb.url}}">
+                                <img src="images/imdb.svg" alt="Imdb" />   <span class="rating">{{content.imdb.rating}}</span> från {{content.imdb.votes}} användare
                             </a>
                         </div>
 
+                        <p class="group">Tillgänglig: en dag kvar</p>
 
-                        <div class="group">
-                            <div class="synopsis" itemprop="description">
-                                När Noah Cooper får sparken från sitt jobb tror han inte att hans liv kan bli så mycket värre. Men när han kommer hem till sitt redan fulla upptäcker han att hans mor, Marilyn flyttat in med sina fem hundar.
-                            </div>
+
+
+                        <div class="synopsis" itemprop="description">
+                            {{content.synopsis}}
                         </div>
 
-                        <div class="group">
-                            <div class="people-list actors">
-                                <h2>Skådespelare: </h2>
-                                <p>
-
-                                    <a href="/search?query=&quot;Dax%20Shepard&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Dax%20Shepard&quot;" data-di-id="di-id-67bcbf8a-71e3b1ca">Dax Shepard</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Diane%20Keaton&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Diane%20Keaton&quot;" data-di-id="di-id-7bd9fd61-e606a318">Diane Keaton</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Ken%20Howard&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Ken%20Howard&quot;" data-di-id="di-id-67bcbf8a-d5c50392">Ken Howard</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Liv%20Tyler&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Liv%20Tyler&quot;" data-di-id="di-id-6e9f36d8-24dc089f">Liv Tyler</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Mike%20White&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Mike%20White&quot;" data-di-id="di-id-67bcbf8a-b57711c5">Mike White</a>
-                                </p>
-                            </div>
-
-                            <div class="people-list directors">
-                                <h2>Regissör: </h2>
-                                <p>
-
-                                    <a href="/search?query=&quot;Vince%20Di&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Vince%20Di&quot;" data-di-id="di-id-6e9f36d8-ba4ada14">Vince Di</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Vince%25Di%25Meglio&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Vince%25Di%25Meglio&quot;" data-di-id="di-id-41bbb43b-4545b3a5">Vince%Di%Meglio</a>
-                                    <span>, </span>
-                                    <a href="/search?query=&quot;Vince%20Di%20Meglio&quot;" data-href="https://content.viaplay.se/pcdash-se/search?query=&quot;Vince%20Di%20Meglio&quot;" data-di-id="di-id-41bbb43b-29482839">Vince Di Meglio</a>
-                                </p>
-                            </div>
 
 
-                            <div class="country">
-                                <h2>Land</h2>:
-                                <p>USA</p>
-                            </div>
+                        <div class="people-list">                            
+                            <p>                                    
+                                <span class="sub-title">Skådespelare:</span>
+                                <a ng-repeat="actor in content.people.actors" href="http://viaplay.se/search?query={{actor}}">{{actor}} <span ng-hide="$last">, </span></a>                                                                       
+                            </p>
                         </div>
+
+                        <div class="people-list">                            
+                            <p>                                    
+                                <span class="sub-title">Regissör:</span>
+                                <a ng-repeat="director in content.people.directors" href="http://viaplay.se/search?query={{director}}">{{director}} <span ng-hide="$last">, </span></a>                                                                       
+                            </p>
+                        </div>
+
+
+                        <div class="country">
+                            
+                            <p>
+                            <span class="sub-title">Land:</span>  {{content.production.country}}
+                            </p>
+                        </div>
+
 
                         <span class="flag">hd</span> 
-                        <span class="flag">12</span> 
-
-
-                        <div class="group">
-                        </div>
+                        <span class="flag">{{content.parentalRating}}</span>                         
                     </div>
                 </div>
             </div>
         </section>
+
         <footer>
             <div class="row">
                 <div class="small-6 large-2 columns">
@@ -276,6 +265,6 @@
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/foundation/js/foundation.min.js"></script>
-        <script src="js/app.js"></script>
+
     </body>
 </html>

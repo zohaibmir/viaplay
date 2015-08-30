@@ -18,7 +18,7 @@ $steel         : #666666 !default;
 $charcoal      : #555555 !default;
 $tuatara       : #444444 !default;
 $oil           : #333333 !default;
-$jet           : #222222 !default;
+$jet           : #212d33 !default;
 $black         : #000000 !default;
 $nav-link      : #f9f9fb !default;
 
@@ -51,3 +51,5 @@ $body-font-style: normal !default;
 $header-bg: #212d33 !default;
 $header-height:rem-calc(66px);
 $header-line-height:rem-calc(66px);
+
+$header-font-color: $jet !default;

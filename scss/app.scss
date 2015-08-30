@@ -15,5 +15,62 @@ body {
 }
 
 #content {
-    padding-bottom: rem-calc(30px);
+    padding-top: rem-calc(50px);
+    padding-bottom: rem-calc(50px);
+    .movie-detail {
+
+        h1 {
+            color: #212d33;
+        }
+        p {
+            color: #3d4348;
+            margin-bottom:rem-calc(5px);
+
+            .genre {
+                a {
+                    font-size: rem-calc(20px);                                        
+                    color: #3d4348;
+                }
+            }
+
+            span {
+                font-size: rem-calc(20px);                                    
+                color: #3d4348;
+            }
+        }
+        .imdb-container {
+            padding-top: rem-calc(15px);
+            padding-bottom: rem-calc(15px);
+            .imdb-link {
+                .rating {
+                    color: #004684;
+                    font-size: rem-calc(18px);
+                }
+                font-size: rem-calc(14px);
+                color: #3d4348;
+            }
+        }
+        .people-list, .country {            
+            .sub-title {
+                font-size: rem-calc(17px);
+                font-weight: 300;
+            }
+            a {
+                font-size: rem-calc(15px);                
+            }
+            p {
+                font-size: rem-calc(14px);
+            }
+        }
+        .flag {
+            display: inline-block;
+            border-radius: 2px;
+            background: #212d33;
+            color: #fff;            
+            font-size: rem-calc(12px);
+            padding: rem-calc(5px) rem-calc(10px);
+
+            text-transform: uppercase;
+        }
+    }
 }

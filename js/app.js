@@ -1,1 +1,1 @@
-$(document).foundation();
+angular.module('viaplay', ['viaplay.controllers' , 'viaplay.services','viaplay.filters','viaplay.directives']);

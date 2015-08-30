@@ -2,12 +2,16 @@ footer {
     background: #212d33;   
     padding: rem-calc(20px);
 
+    .logo {
+        padding-top: rem-calc(20px);
+    }
     h3 {
         color: #f9f9fb;
         font-size: rem-calc(16px);
         text-transform: uppercase;
         letter-spacing: .04em;
         font-weight: 400;
+        padding-top: rem-calc(20px);
     }
 
     ul {
