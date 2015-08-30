@@ -8,4 +8,13 @@ header {
     .logo {
         max-width: 168px;
     }
+
+    .header-search {
+        text-align: right;
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        height: auto;
+    }
 }

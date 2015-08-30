@@ -1,0 +1,13 @@
+.dropdown-btn {
+    @include button();
+    @include dropdown-button();
+    background-color: transparent;
+    border-color:$header-bg;
+    &:hover {
+        background-color: transparent;
+    }
+    &:focus {
+        background-color: transparent;
+        border-color:$header-bg;
+    }
+}
