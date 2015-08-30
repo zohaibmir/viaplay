@@ -1,0 +1,11 @@
+header {
+    background: #212d33;
+    height: $header-height;
+    line-height: $header-line-height;
+    vertical-align: middle;
+    border-top: 1px solid #212d33;
+
+    .logo {
+        max-width: 168px;
+    }
+}

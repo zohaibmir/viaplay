@@ -1,0 +1,21 @@
+nav {
+    display: inline-block;
+    line-height:65px;
+    a {        
+        display: inline-block;
+        padding: 0 25px;
+        color: $nav-link ;
+        text-decoration: none;        
+        text-transform: uppercase;
+        
+        &.active {
+            background: #fff;
+            color: #212d33;
+        }
+        
+        &:hover {
+            background: #0f161a;
+            color: $nav-link ;
+        }
+    }
+}
