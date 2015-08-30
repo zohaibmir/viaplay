@@ -11,4 +11,21 @@ angular.module('viaplay.services', [])
 
                 }
             };
-        });
+        })
+
+        .factory('TrailerAddictApi', function ($http) {
+
+            return {
+                getTrailerbyImdbId: function (imdb) {
+                    return $http({
+                        method: 'GET',
+                        url: 'traileraddict.php?imdb=' + imdb
+                    });
+
+                }
+            };
+        })
+
+        ;
+        
+        

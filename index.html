@@ -14,7 +14,7 @@
         <script src="js/filters.js"></script>
         <script src="js/directives.js"></script>
     </head>
-    <body ng-controller="VideoDetailCtrl">
+    <body ng-controller="VideoDetailCtrl" ng-cloak>
         <header>
             <div class="row">
                 <div class="large-2 small-8 columns">
@@ -58,10 +58,16 @@
         <section id="content">
             <div class="row">
                 <div class="small-12 large-7 columns">
+                    
+                    
                     <figure class="mediaplayer">
-                        <img class="poster" src="http://i.viaplay.com/scandi/Viaplay_Prod_-_Scandi/298/300/S86712_landscape_GE-1440753099649.jpg?width=840&amp;height=472" alt="smother-2007" itemprop="image">
-
-
+                        
+                        
+                        <div ng-bind-html="iframe" ng-show="showiframe"></div>
+                        <div class="playbutton" ng-show="!showiframe">
+                        <img class="poster" src="{{content.images.landscape.url}}"  alt="">
+                            <a class="play-link" ng-click="playButton()"></a>
+                        </div>  
                     </figure>
                 </div>
 
@@ -121,9 +127,9 @@
 
 
                         <div class="country">
-                            
+
                             <p>
-                            <span class="sub-title">Land:</span>  {{content.production.country}}
+                                <span class="sub-title">Land:</span>  {{content.production.country}}
                             </p>
                         </div>
 

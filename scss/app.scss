@@ -17,6 +17,22 @@ body {
 #content {
     padding-top: rem-calc(50px);
     padding-bottom: rem-calc(50px);
+
+    .playbutton {
+        vertical-align: middle;
+        display: inline-block;
+        position: relative; 
+        .play-link {
+            width: 96px;
+            height: 96px;
+            left: 233px;
+            top: 114px;
+            position: absolute;            
+            display: block;
+            background: url('../images/play_button.svg');
+
+        }
+    }
     .movie-detail {
 
         h1 {

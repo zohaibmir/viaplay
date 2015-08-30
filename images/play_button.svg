@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="100%" width="100%" viewBox="0 0 100 100" version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style><![CDATA[
+        g {
+            stroke: #fff;
+        }
+        g circle {
+            fill: rgba(0,0,0,0.0);
+            stroke-width: 4;
+        }
+        g polyline {
+            fill: transparent;
+            stroke-width: 10;
+        }
+    ]]></style>
+
+    <g>
+        <circle r="48" cx="50" cy="50" />
+        <polyline points="41,28 63,50 41,72" />
+    </g>
+</svg>
