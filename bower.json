@@ -2,6 +2,7 @@
   "name": "foundation-libsass-template",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
+    "angular": "1.2.0-rc.1",
     "angular-xml": "~2.2.1"
   }
 }
