@@ -64,4 +64,4 @@ In Angular JS  its very easy to get data from API but I get the problem with tra
 They haven’t implemented the Cross-origin resource sharing (CORS) on server so I get the CORS error.
 So for now I used the Php file traileraddict.php to get the data from trailleradict and then angular service to get the trailer id from my php function.
 
-we can also resolve this error by using proxy server if needed and want to stuck only with front-end framework.
+we can also resolve this error by using proxy server if needed and or want to use only with front-end framework.
